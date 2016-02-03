@@ -12,6 +12,8 @@ namespace MyMemo
 {
     public partial class Form1 : Form
     {
+        const string ApplicationName = "MyMemo";
+
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace MyMemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.Text = ApplicationName;
         }
     }
 }
