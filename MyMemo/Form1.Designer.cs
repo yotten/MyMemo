@@ -80,19 +80,22 @@
             // MenuItemFileNew
             // 
             this.MenuItemFileNew.Name = "MenuItemFileNew";
-            this.MenuItemFileNew.Size = new System.Drawing.Size(190, 22);
+            this.MenuItemFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.MenuItemFileNew.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileNew.Text = "新規(&N)";
             // 
             // MenuItemFileOpen
             // 
             this.MenuItemFileOpen.Name = "MenuItemFileOpen";
-            this.MenuItemFileOpen.Size = new System.Drawing.Size(190, 22);
+            this.MenuItemFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.MenuItemFileOpen.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileOpen.Text = "開く(O)";
             // 
             // MenuItemFileSave
             // 
             this.MenuItemFileSave.Name = "MenuItemFileSave";
-            this.MenuItemFileSave.Size = new System.Drawing.Size(190, 22);
+            this.MenuItemFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.MenuItemFileSave.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileSave.Text = "上書き保存(&S)";
             // 
             // MenuItemFileSaveAs
