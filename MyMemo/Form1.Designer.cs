@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxMain = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +60,19 @@
             this.MenuItemFileExit.Text = "終了(&X)";
             this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
             // 
+            // textBoxMain
+            // 
+            this.textBoxMain.Location = new System.Drawing.Point(53, 49);
+            this.textBoxMain.Name = "textBoxMain";
+            this.textBoxMain.Size = new System.Drawing.Size(100, 19);
+            this.textBoxMain.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.textBoxMain);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -81,6 +90,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFile;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileExit;
+        private System.Windows.Forms.TextBox textBoxMain;
     }
 }
 

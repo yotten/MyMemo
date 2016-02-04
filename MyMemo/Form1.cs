@@ -22,6 +22,10 @@ namespace MyMemo
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = ApplicationName;
+
+            textBoxMain.Multiline = true;
+            textBoxMain.ScrollBars = ScrollBars.Vertical;
+            textBoxMain.Dock = DockStyle.Fill;
         }
 
         private void MenuItemFileExit_Click(object sender, EventArgs e)
