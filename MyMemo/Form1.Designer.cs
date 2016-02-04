@@ -36,6 +36,7 @@
             this.MenuItemFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,7 @@
             this.MenuItemFileOpen,
             this.MenuItemFileSave,
             this.MenuItemFileSaveAs,
+            this.toolStripSeparator1,
             this.MenuItemFileExit});
             this.MenuItemFile.Name = "MenuItemFile";
             this.MenuItemFile.Size = new System.Drawing.Size(85, 22);
@@ -99,6 +101,11 @@
             this.MenuItemFileSaveAs.Size = new System.Drawing.Size(190, 22);
             this.MenuItemFileSaveAs.Text = "名前を付けて保存(&A)";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -127,6 +134,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileOpen;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSave;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSaveAs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 
