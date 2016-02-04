@@ -37,6 +37,7 @@
             this.MenuItemFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFileSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,6 +91,7 @@
             this.MenuItemFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.MenuItemFileOpen.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileOpen.Text = "開く(O)";
+            this.MenuItemFileOpen.Click += new System.EventHandler(this.MenuItemFileOpen_Click);
             // 
             // MenuItemFileSave
             // 
@@ -108,6 +110,10 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -138,6 +144,7 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSave;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFileSaveAs;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

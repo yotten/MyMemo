@@ -32,5 +32,17 @@ namespace MyMemo
         {
             this.Close();
         }
+
+        private void MenuItemFileOpen_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
+            LoadFile(openFileDialog1.FileName);
+        }
+
+        private void LoadFile(string value)
+        {
+            textBoxMain.Text = System.IO.File.ReadAllText(value, System.Text.Encoding.GetEncoding("Shift_JIS"));
+        }
     }
 }
