@@ -23,5 +23,10 @@ namespace MyMemo
         {
             this.Text = ApplicationName;
         }
+
+        private void MenuItemFileExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

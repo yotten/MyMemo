@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +46,18 @@
             // 
             // MenuItemFile
             // 
+            this.MenuItemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemFileExit});
             this.MenuItemFile.Name = "MenuItemFile";
             this.MenuItemFile.Size = new System.Drawing.Size(85, 22);
             this.MenuItemFile.Text = "ファイル(&F)";
+            // 
+            // MenuItemFileExit
+            // 
+            this.MenuItemFileExit.Name = "MenuItemFileExit";
+            this.MenuItemFileExit.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemFileExit.Text = "終了(&X)";
+            this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
             // 
             // Form1
             // 
@@ -70,6 +80,7 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MenuItemFile;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFileExit;
     }
 }
 
