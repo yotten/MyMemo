@@ -13,6 +13,7 @@ namespace MyMemo
     public partial class Form1 : Form
     {
         const string ApplicationName = "MyMemo";
+        private string FileName = "";
 
         public Form1()
         {
@@ -38,6 +39,7 @@ namespace MyMemo
         private void MenuItemFileOpen_Click(object sender, EventArgs e)
         {
             openFileDialog1.FileName = "";
+
             if (DialogResult.OK == openFileDialog1.ShowDialog())
                 LoadFile(openFileDialog1.FileName);
         }
@@ -45,10 +47,13 @@ namespace MyMemo
         private void LoadFile(string value)
         {
             textBoxMain.Text = System.IO.File.ReadAllText(value, System.Text.Encoding.GetEncoding("Shift_JIS"));
+            FileName = value;
         }
 
         private void MenuItemFileSaveAs_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.FileName = System.IO.Path.GetFileName(FileName);
+
             if (DialogResult.OK == saveFileDialog1.ShowDialog())
                 SaveFile(saveFileDialog1.FileName);
         }
