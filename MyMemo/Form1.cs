@@ -20,7 +20,14 @@ namespace MyMemo
             set {
                 string s = ApplicationName;
                 if (value != "")
+                {
                     s += " - " + value;
+                    MenuItemFileSave.Enabled = true;
+                }
+                else
+                {
+                    MenuItemFileSave.Enabled = false;
+                }
                 this.Text = s;
                 FileNameValue = value;
             }
@@ -75,6 +82,12 @@ namespace MyMemo
         private void SaveFile(string value)
         {
             System.IO.File.WriteAllText(value, textBoxMain.Text, System.Text.Encoding.GetEncoding("Shift_JIS"));
+            FileName = value;
+        }
+
+        private void MenuItemFileSave_Click(object sender, EventArgs e)
+        {
+            SaveFile(FileName);
         }
     }
 }

@@ -100,6 +100,7 @@
             this.MenuItemFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.MenuItemFileSave.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileSave.Text = "上書き保存(&S)";
+            this.MenuItemFileSave.Click += new System.EventHandler(this.MenuItemFileSave_Click);
             // 
             // MenuItemFileSaveAs
             // 
