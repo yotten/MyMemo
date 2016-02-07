@@ -48,6 +48,7 @@ namespace MyMemo
         {
             textBoxMain.Text = System.IO.File.ReadAllText(value, System.Text.Encoding.GetEncoding("Shift_JIS"));
             FileName = value;
+            textBoxMain.Select(0, 0);
         }
 
         private void MenuItemFileSaveAs_Click(object sender, EventArgs e)
