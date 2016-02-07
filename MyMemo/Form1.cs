@@ -26,6 +26,8 @@ namespace MyMemo
             textBoxMain.Multiline = true;
             textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Dock = DockStyle.Fill;
+
+            saveFileDialog1.Filter = "テキスト文書|*.txt|すべてのファイル|*.*";
         }
 
         private void MenuItemFileExit_Click(object sender, EventArgs e)
