@@ -13,7 +13,20 @@ namespace MyMemo
     public partial class Form1 : Form
     {
         const string ApplicationName = "MyMemo";
-        private string FileName = "";
+        private string FileNameValue;
+        private string FileName
+        {
+            get { return FileNameValue; }
+            set {
+                string s = ApplicationName;
+                if (value != "")
+                    s += " - " + value;
+                this.Text = s;
+                FileNameValue = value;
+            }
+
+        }
+        //private string FileName = "";
 
         public Form1()
         {
@@ -22,7 +35,7 @@ namespace MyMemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text = ApplicationName;
+            FileName = "";
 
             textBoxMain.Multiline = true;
             textBoxMain.ScrollBars = ScrollBars.Vertical;
