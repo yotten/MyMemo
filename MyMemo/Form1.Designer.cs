@@ -86,6 +86,7 @@
             this.MenuItemFileNew.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.MenuItemFileNew.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileNew.Text = "新規(&N)";
+            this.MenuItemFileNew.Click += new System.EventHandler(this.MenuItemFileNew_Click);
             // 
             // MenuItemFileOpen
             // 
@@ -129,6 +130,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

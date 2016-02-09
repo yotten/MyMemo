@@ -114,5 +114,31 @@ namespace MyMemo
         {
             Edited = true;
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AskGiveUpText())
+                e.Cancel = true;
+        }
+
+        private bool AskGiveUpText()
+        {
+            if (!Edited || textBoxMain.TextLength == 0)
+                return true;
+
+            if (DialogResult.Yes == MessageBox.Show("編集内容を破棄しますか？", ApplicationName, MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                return true;
+            else
+                return false;
+        }
+
+        private void MenuItemFileNew_Click(object sender, EventArgs e)
+        {
+            if (!AskGiveUpText())
+                return;
+
+            textBoxMain.Clear();
+            FileName = "";
+        }
     }
 }
