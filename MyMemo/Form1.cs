@@ -69,6 +69,12 @@ namespace MyMemo
             textBoxMain.Dock = DockStyle.Fill;
 
             saveFileDialog1.Filter = "テキスト文書|*.txt|すべてのファイル|*.*";
+
+            if (Environment.GetCommandLineArgs().Length > 1)
+            {
+                string[] args = Environment.GetCommandLineArgs();
+                LoadFile(args[1]);
+            }
         }
 
         private void MenuItemFileExit_Click(object sender, EventArgs e)
@@ -84,10 +90,16 @@ namespace MyMemo
                 LoadFile(openFileDialog1.FileName);
         }
 
-        private void LoadFile(string value)
+        private void LoadFile(string path)
         {
-            textBoxMain.Text = System.IO.File.ReadAllText(value, System.Text.Encoding.GetEncoding("Shift_JIS"));
-            FileName = value;
+            if (!System.IO.File.Exists(path))
+            {
+                MessageBox.Show(path + "が見つかりません", ApplicationName);
+                return;
+            }
+             
+            textBoxMain.Text = System.IO.File.ReadAllText(path, System.Text.Encoding.GetEncoding("Shift_JIS"));
+            FileName = path;
             textBoxMain.Select(0, 0);
         }
 
