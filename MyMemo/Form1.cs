@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,16 @@ namespace MyMemo
     public partial class Form1 : Form
     {
         const string ApplicationName = "MyMemo";
+        const string RegistryKey = "Software" + ApplicationName;
+        private string FilePath;
         private string FileNameValue;
         private string FileName
         {
             get { return FileNameValue; }
             set {
                 FileNameValue = value;
+                if (value != "")
+                    FilePath = System.IO.Path.GetDirectoryName(value);
                 Edited = false;
             }
         }
@@ -70,6 +75,10 @@ namespace MyMemo
 
             saveFileDialog1.Filter = "テキスト文書|*.txt|すべてのファイル|*.*";
 
+            // レジストリからFilePathを取り出す。レジストリにFilePathが無い場合は「マイ ドキュメント」を入れる
+            Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(RegistryKey);
+            FilePath = regKey.GetValue("FilePath", System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)).ToString();
+
             if (Environment.GetCommandLineArgs().Length > 1)
             {
                 string[] args = Environment.GetCommandLineArgs();
@@ -105,6 +114,7 @@ namespace MyMemo
 
         private void MenuItemFileSaveAs_Click(object sender, EventArgs e)
         {
+            saveFileDialog1.InitialDirectory = FilePath;
             saveFileDialog1.FileName = System.IO.Path.GetFileName(FileName);
 
             if (DialogResult.OK == saveFileDialog1.ShowDialog())
@@ -151,6 +161,12 @@ namespace MyMemo
 
             textBoxMain.Clear();
             FileName = "";
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(RegistryKey);
+            regKey.SetValue("FilePath", FilePath);
         }
     }
 }
