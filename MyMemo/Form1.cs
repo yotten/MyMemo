@@ -73,6 +73,9 @@ namespace MyMemo
             textBoxMain.ScrollBars = ScrollBars.Vertical;
             textBoxMain.Dock = DockStyle.Fill;
 
+            fontDialog1.ShowEffects = false; // 文字飾りをfalse
+            fontDialog1.AllowScriptChange = false; // 文字セットをfalse
+
             saveFileDialog1.Filter = "テキスト文書|*.txt|すべてのファイル|*.*";
 
             // レジストリからFilePathを取り出す。レジストリにFilePathが無い場合は「マイ ドキュメント」を入れる
