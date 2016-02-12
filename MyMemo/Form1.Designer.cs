@@ -39,13 +39,17 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.MenuItemSetting = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItemFontSettingFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MenuItemFile});
+            this.MenuItemFile,
+            this.MenuItemSetting});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(284, 26);
@@ -68,15 +72,16 @@
             // MenuItemFileExit
             // 
             this.MenuItemFileExit.Name = "MenuItemFileExit";
-            this.MenuItemFileExit.Size = new System.Drawing.Size(190, 22);
+            this.MenuItemFileExit.Size = new System.Drawing.Size(201, 22);
             this.MenuItemFileExit.Text = "終了(&X)";
             this.MenuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExit_Click);
             // 
             // textBoxMain
             // 
+            this.textBoxMain.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.textBoxMain.Location = new System.Drawing.Point(53, 49);
             this.textBoxMain.Name = "textBoxMain";
-            this.textBoxMain.Size = new System.Drawing.Size(100, 19);
+            this.textBoxMain.Size = new System.Drawing.Size(100, 23);
             this.textBoxMain.TabIndex = 1;
             this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
             // 
@@ -114,11 +119,26 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(198, 6);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // MenuItemSetting
+            // 
+            this.MenuItemSetting.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuItemFontSettingFont});
+            this.MenuItemSetting.Name = "MenuItemSetting";
+            this.MenuItemSetting.Size = new System.Drawing.Size(62, 22);
+            this.MenuItemSetting.Text = "設定(&S)";
+            // 
+            // MenuItemFontSettingFont
+            // 
+            this.MenuItemFontSettingFont.Name = "MenuItemFontSettingFont";
+            this.MenuItemFontSettingFont.Size = new System.Drawing.Size(152, 22);
+            this.MenuItemFontSettingFont.Text = "フォント";
+            this.MenuItemFontSettingFont.Click += new System.EventHandler(this.MenuItemFontSettingFont_Click);
             // 
             // Form1
             // 
@@ -153,6 +173,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemSetting;
+        private System.Windows.Forms.ToolStripMenuItem MenuItemFontSettingFont;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 

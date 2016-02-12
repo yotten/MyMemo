@@ -168,5 +168,12 @@ namespace MyMemo
             Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(RegistryKey);
             regKey.SetValue("FilePath", FilePath);
         }
+
+        private void MenuItemFontSettingFont_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = textBoxMain.Font; // 現在の設定値を初期値に設定
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+                textBoxMain.Font = fontDialog1.Font;
+        }
     }
 }
