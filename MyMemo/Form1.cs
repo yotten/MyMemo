@@ -67,6 +67,11 @@ namespace MyMemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            const int initialWidth = 400;
+            const int initialHeight = 200;
+
+            this.MinimumSize = new System.Drawing.Size(initialWidth, initialHeight);
+
             FileName = "";
 
             textBoxMain.Multiline = true;
